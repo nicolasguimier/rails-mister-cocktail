@@ -1,4 +1,4 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path(@cocktail.photo) %>);">
   <div class="container">
     <h1><%= @cocktail.name %></h1>
   </div>
@@ -6,7 +6,7 @@
 <div class="row mt-4">
   <div class="col">
     <h2>Description</h2>
-    <p>... nothing in DB for now.</p>
+    <p><%= @cocktail.description %></p>
   </div>
   <div class="col">
     <% if @cocktail.doses.empty? %>

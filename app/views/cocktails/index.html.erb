@@ -3,7 +3,19 @@
 <% else %>
   <div class="cocktails card-columns">
     <% @cocktails.each do |cocktail| %>
-      <div class="card mb-4" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.2)), url('https://source.unsplash.com/random')">
+    <%#= cl_image_path("a9rgjsatmupsudv26q9x",
+      width: 400, height: 300, crop: :fill) %>
+
+      <%#= cl_image_tag("v1574429541/a9rgjsatmupsudv26q9x.jpg",
+      width: 400, height: 300, crop: :fill) %>
+
+<!-- for face detection -->
+<%#= cl_image_tag("a9rgjsatmupsudv26q9x",
+      width: 150, height: 150, crop: :thumb, gravity: :face) %>
+
+
+      <div class="card mb-4" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.2)),
+      url('https://source.unsplash.com/random')">
       <!-- <div class="card-category" >   -->
         <!-- <img class="card-img-top" src="https://source.unsplash.com/random" alt="Card image cap"> -->
         <!-- <div class="card-img-overlay text-center">

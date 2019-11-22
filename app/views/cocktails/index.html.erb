@@ -2,12 +2,31 @@
 <% if @cocktails.empty? %>
   <p>No cocktail for now.</p>
 <% else %>
-  <ul>
+  <div class="cocktails card-columns">
     <% @cocktails.each do |cocktail| %>
-      <li>
-        <%= link_to cocktail.name, cocktail_path(cocktail) %>
-      </li>
+      <div class="card mb-4" style="width: 18rem; background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.2)), url('https://source.unsplash.com/random')">
+      <!-- <div class="card-category" >   -->
+        <!-- <img class="card-img-top" src="https://source.unsplash.com/random" alt="Card image cap"> -->
+        <!-- <div class="card-img-overlay text-center">
+        </div> -->
+        <%= link_to cocktail_path(cocktail) do %>
+        <div class="card-body text-white">
+          <h3 class="card-title"><%= cocktail.name %></h3>
+          <% if !cocktail.doses.empty? %>
+            <p class="card-text">Ingredients : </p>
+            <ul class= "card-text">
+              <% cocktail.doses.each do |dose| %>
+              <li><%= dose.description %> <%= dose.ingredient.name %></li>
+              <% end %>
+            </ul>
+          <% end %>
+          <%#= link_to "See more", cocktail_path(cocktail), class:'btn btn-primary' %>
+        </div>
+        <% end %>
+      </div>
+
+
     <% end %>
-  </ul>
+  </div>
 <% end %>
 <%= link_to "Create new cocktail", new_cocktail_path, class:'btn btn-primary' %>

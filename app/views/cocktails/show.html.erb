@@ -1,16 +1,23 @@
-<h1><%= @cocktail.name %></h1>
-<div class="recipe">
-  <!-- with the dose needed for each ingredient -->
-  <% if @cocktail.doses.empty? %>
-    <p> No recipe for this cocktail.</p>
-  <% else %>
-    <ul class="list-group">
-    <% @cocktail.doses.each do |dose| %>
-      <li class="list-group-item d-flex justify-content-between"><%= dose.ingredient.name %> : <%= dose.description %><%= link_to dose_path(dose), method: :delete do %> <i class="fa fa-trash" aria-hidden="true">Delete</i><% end %></li>
-    <% end %>
-    </ul>
-  <% end %>
-  <%= link_to "Create a new dose", new_cocktail_dose_path(@cocktail), class:'btn btn-primary' %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
+  <div class="container">
+    <h1><%= @cocktail.name %></h1>
+  </div>
 </div>
-<%= link_to "back to the cocktails", root_path, class:'btn btn-secondary' %>
-
+<div class="row mt-4">
+  <div class="col">
+    <h2>Description</h2>
+    <p>... nothing in DB for now.</p>
+  </div>
+  <div class="col">
+    <% if @cocktail.doses.empty? %>
+      <p> No recipe for this cocktail.</p>
+    <% else %>
+      <ul class="list-group">
+      <% @cocktail.doses.each do |dose| %>
+        <li class="list-group-item d-flex justify-content-between"><%= dose.ingredient.name %> : <%= dose.description %><%= link_to dose_path(dose), method: :delete do %> <i class="fa fa-trash text-danger" aria-hidden="true"></i><% end %></li>
+      <% end %>
+      </ul>
+    <% end %>
+    <%= link_to "Create a new dose", new_cocktail_dose_path(@cocktail), class:'btn btn-primary mt-3' %>
+  </div>
+</div>

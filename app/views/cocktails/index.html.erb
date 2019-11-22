@@ -1,10 +1,9 @@
-<h1>See all the cocktails</h1>
 <% if @cocktails.empty? %>
   <p>No cocktail for now.</p>
 <% else %>
   <div class="cocktails card-columns">
     <% @cocktails.each do |cocktail| %>
-      <div class="card mb-4" style="width: 18rem; background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.2)), url('https://source.unsplash.com/random')">
+      <div class="card mb-4" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.2)), url('https://source.unsplash.com/random')">
       <!-- <div class="card-category" >   -->
         <!-- <img class="card-img-top" src="https://source.unsplash.com/random" alt="Card image cap"> -->
         <!-- <div class="card-img-overlay text-center">

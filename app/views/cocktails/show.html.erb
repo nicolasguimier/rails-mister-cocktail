@@ -4,9 +4,9 @@
   <% if @cocktail.doses.empty? %>
     <p> No recipe for this cocktail.</p>
   <% else %>
-    <ul>
+    <ul class="list-group">
     <% @cocktail.doses.each do |dose| %>
-      <li><%= dose.ingredient.name %> : <%= dose.description %> - <%= link_to "Delete", dose_path(dose), method: :delete %></li>
+      <li class="list-group-item d-flex justify-content-between"><%= dose.ingredient.name %> : <%= dose.description %><%= link_to dose_path(dose), method: :delete do %> <i class="fa fa-trash" aria-hidden="true">Delete</i><% end %></li>
     <% end %>
     </ul>
   <% end %>
